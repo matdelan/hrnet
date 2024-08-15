@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Input from "./assets/component/input/Input"
 import './App.css'
+import DatePicker from './assets/component/datepicker/DatePicker'
 
 function App() {
 
@@ -18,9 +19,8 @@ function App() {
           <Input id="first-name" name="First Name"/>
           <Input id="last-name" name="Last Name"/>
 
-          
-          <label for="date-of-birth">Date of Birth</label>
-          <input id="date-of-birth" type="text" />
+          <DatePicker id="date-of-birth" name="Date of Birth"/>
+
 
           <label for="start-date">Start Date</label>
           <input id="start-date" type="text" />

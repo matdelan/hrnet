@@ -1,0 +1,46 @@
+.modalDatePicker{
+    position: absolute;
+    margin-left:  15px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .calendar__day {
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+  }
+  .calendar__day-white {
+    padding: 5px 10px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+  }
+
+  .calendar__day-selected {
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #1e4ebf;
+    color: white;
+  }
+
+  .calendar__day-grey {
+    padding: 5px 10px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    color: lightgray;
+  }
+
+  .calendar__day:hover {
+    background-color: #f0aa3a;
+    color: white;
+  }
+
+  .calendar__header {
+    background-color: #f0f0f0;
+  }
