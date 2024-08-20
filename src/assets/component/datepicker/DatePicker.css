@@ -43,4 +43,8 @@
 
   .calendar__header {
     background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
   }

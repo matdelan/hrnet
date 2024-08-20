@@ -1,5 +1,7 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
+import useOnClickOutside from '../../hook/useonclickoutside'
 import "./DatePicker.css"
+
 
 function getMonthDays(year, month) {
     const result = [];
@@ -38,7 +40,7 @@ export default function DatePicker({id, name}) {
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     //Init display of component to false
- 
+    const weekDay = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     const [display, setDisplay] = useState(false)
 
     const [date, setDate] = useState(new Date())
@@ -47,21 +49,66 @@ export default function DatePicker({id, name}) {
     const [month, setMonth] = useState(date.getMonth() + 1)
     const [year, setYear] = useState(date.getFullYear())
 
-    const days = getMonthDays(year, month)
-    console.log(date)
+    //Form
+    const [inputValue, setInputValue] = useState('');
+
+    const [days, setDays] = useState(getMonthDays(year, month))
+    /*console.log(date)
     console.log(days)
     console.log(day)
     console.log(month)
-    console.log(year)
+    console.log(year)*/
 
-
+    const datePickerRef = useRef(null);
+    useOnClickOutside(datePickerRef, () => setDisplay(false)); 
 
     //Manage Focus and blur on input
     const handleInputFocus = () => {
         setDisplay(true)
     }
     const handleInputBlur = () => {
-        setDisplay(false)
+        //setDisplay(false)
+    }
+    const handleDayClick = (selectedDay, selectedMonth, selectedYear) => {
+        console.log("value :" + selectedDay)
+        setDay(selectedDay);
+        setMonth(selectedMonth);
+        setYear(selectedYear);
+
+        const formattedDate = `${selectedMonth}/${selectedDay}/${selectedYear}`;
+        setInputValue(formattedDate);
+        setDisplay(false); // Fermer le calendrier après sélection
+    }
+
+    /* Previous Month */
+    const handleCalendarLeftClick = () => {
+        if((month-1) === 0) {
+            setYear(year-1)
+            setMonth(12)
+            setDays(getMonthDays(year, month))
+        }
+        else {
+            setMonth(month-1)
+            setDays(getMonthDays(year, month))
+        }
+        const formattedDate = `${month}/${day}/${year}`
+        setInputValue(formattedDate);
+        console.log(inputValue)
+    }
+
+    const handleCalendarRightClick = () => {
+        if((month+1) === 13) {
+            setYear(year+1)
+            setMonth(1)
+            setDays(getMonthDays(year, month))
+        }
+        else {
+            setMonth(month+1)
+            setDays(getMonthDays(year, month))
+        }
+        const formattedDate = `${month}/${day}/${year}`
+        setInputValue(formattedDate)
+        console.log(inputValue)
     }
 
     return <>
@@ -69,18 +116,24 @@ export default function DatePicker({id, name}) {
             display ? 
                 <> 
                     <label htmlFor={id}>{name}</label>
-                    <input type="text" id={id} className="" onFocus={handleInputFocus} onBlur={handleInputBlur}  />
+                    <input type="text" id={id} className="" onFocus={handleInputFocus} onBlur={handleInputBlur} value={inputValue}  />
 
-                    <div className="modalDatePicker">
+                    <div className="modalDatePicker" ref={datePickerRef}>
                         <div className="calendar__header">
                             <div className="calendar__header">
-                                <i class="fa-solid fa-caret-left"></i>
-                                <i class="fa-solid fa-house"></i>
-                                {monthNames[month-1] + " " + year} 
-                                <i class="fa-solid fa-caret-right"></i>
+                                <div className="calendar__header-left">
+                                    <i class="fa-solid fa-caret-left" onClick={handleCalendarLeftClick}></i>
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                                <div className="calendar__header-left">
+                                    {monthNames[month-1] + " " + year} 
+                                    <i class="fa-solid fa-caret-right" onClick={handleCalendarRightClick}></i>
+                                </div>
                             </div>
                         </div>
                         <div className="calendar-grid">
+                            
+                            {   weekDay.map((d, index) => <div className="calendar__day" key={index}> {d} </div> )}
                             {
                                 days.map((d, index) => (
                                     <div 
@@ -92,6 +145,7 @@ export default function DatePicker({id, name}) {
                                                 ? "calendar__day" 
                                                 : "calendar__day-grey"
                                         }
+                                        onClick={() => handleDayClick(d.day, d.month, year)}
                                     >
                                         <span className="text-opacity">{d.day}</span>
                                     </div>
