@@ -1,38 +1,30 @@
-import React, { useState } from 'react'
-import './DatePickerHtml.css' 
+import React, { useState } from 'react';
+import './DatePickerHtml.css'
 
-function DatePickerHtml() {
-  const [selectedDate, setSelectedDate] = useState('')
-  const [showDatePicker, setShowDatePicker] = useState(false)
+const DateInput = ({ id, content, name }) => {
+  const [date, setDate] = useState('');
 
   const handleDateChange = (event) => {
-    setSelectedDate(event.target.value)
-    setShowDatePicker(false)
-  };
-
-  const handleInputClick = () => {
-    setShowDatePicker(!showDatePicker)
+    setDate(event.target.value);
   };
 
   return (
-    <div className="datepicker__container">
+    <div className='datepicker__container'>
+      <label htmlFor={id} style={{ marginRight: '8px' }}>
+        {content}:
+      </label>
       <input
-        className="datepicker__input"
-        type="text"
-        placeholder="Select a date"
-        value={selectedDate}
-        onClick={handleInputClick}
-        readOnly
+        type="date"
+        id={id}
+        name={name}
+        placeholder=''
+        value={date}
+        onChange={handleDateChange}
+        style={{ padding: '8px', width: '200px' }}
+        className='datepicker__input'
       />
-      {showDatePicker && (
-        <input
-          className="datepicker__input-picker"
-          type="date"
-          onChange={handleDateChange}
-        />
-      )}
     </div>
-  )
-}
+  );
+};
 
-export default DatePickerHtml
+export default DateInput;

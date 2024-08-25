@@ -11,7 +11,7 @@ export default function Header() {
 
    
     return <nav className="main-nav">
-        <div class="title">
+        <div className="title">
             <h1>HRnet</h1>
         </div>
         

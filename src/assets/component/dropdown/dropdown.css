@@ -1,0 +1,7 @@
+.option__container{
+    padding: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    border: 2px solid #050505a8;
+    border-radius: 4px;
+}

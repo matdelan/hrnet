@@ -1,0 +1,33 @@
+.dialog__container {
+  padding: 20px;
+  border: 2px solid black;
+  position: relative;
+  width: 350px;
+  display: flex;
+  height: 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+  
+.dialog__close-button {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: -25px;
+  right: -25px;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+
+.dialog {
+  padding: 100px;
+  border: none;
+  background-color: transparent;
+}
+  
+  
+

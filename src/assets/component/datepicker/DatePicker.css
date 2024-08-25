@@ -46,5 +46,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
 
+  .calendar__header-left{
+    
+  }
+
+  .calendar__header-right{
+    
   }
