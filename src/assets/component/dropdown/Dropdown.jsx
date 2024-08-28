@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './dropdown.css'
 
-const Dropdown = ({ options, label, onSelect, name }) => {
+const Dropdown = ({ options, label, name, inputRef, errorRef }) => {
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleChange = (event) => {
@@ -11,7 +11,7 @@ const Dropdown = ({ options, label, onSelect, name }) => {
   return (
     <>
       <label>{label}</label>
-      <select value={selectedOption} onChange={handleChange} className='option__container' name={name}>
+      <select value={selectedOption} onChange={handleChange} className='option__container' name={name} ref={inputRef}>
         <option value="" disabled>
           -- Sélectionnez une option --
         </option>
@@ -22,6 +22,7 @@ const Dropdown = ({ options, label, onSelect, name }) => {
             </option>
         ))}
       </select>
+      <div ref={errorRef} className="error-message" data-error-visible="false"></div>
     </>
   );
 };

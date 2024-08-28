@@ -9,6 +9,11 @@ export const regexPassword = (password) => {
 }
 
 export const regexString = (string) => {
-    const regex = /^(?=.*?[a-z])(?=.*?[A-Z]).{2,}$/ 
+    const regex = /^(?=.*?[a-z]).{2,}$/ 
+    return regex.test(string)
+}
+
+export const regexZipCode = (string) => {
+    const regex = /^(?=.*?[0-9]).{5,}$/ 
     return regex.test(string)
 }

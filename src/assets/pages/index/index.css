@@ -34,3 +34,16 @@ html {
   margin-top:100px;
   width: 100%;
 }
+
+.alert{
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+[data-error-visible="false"] {
+  display: none;
+}
