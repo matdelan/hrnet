@@ -21,14 +21,14 @@ paths:
           description: Employee status
           required: true
           schema:
-            $ref: '#/definitions/Employee'
+            $ref: '#/definitions/newEmployee'
       produces:
         - application/json
       responses:
         '200':
           description: Login Successfully
           schema:
-            $ref: '#/definitions/LoginResponse'
+            $ref: '#/definitions/Employee'
         '400':
           description: Invalid Fields
         '500':
@@ -57,34 +57,67 @@ paths:
           description: Internal Server Error
   
 definitions:
-  Employee:
+  newEmployee:
     properties:
-      email:
-        type: string
-        description: user email
-      password:
-        type: string
-        description: user password
-      firstName:
+      firstname:
         type: string
         description: user first name
-      lastName:
+      lastname:
         type: string
-        description: user last name
-  ApiResponse:
-    type: object
-    properties:
-      status:
+        description: user password
+      dateBirthday:
+        type: string
+        description: date of birthday
+      dateStart:
+        type: string
+        description: begin to work for us
+      departement:
+        type: string
+        description: departement
+      street:
+        type: string
+        description: street
+      city:
+        type: string
+        description: city
+      state:
+        type: string
+        description: state
+      zipCode:
         type: integer
-      message:
+        description: Zip Code
+  Employee:
+    properties:
+      id:
+        type: integer
+        description: user id
+      firstname:
         type: string
-      body:
-        type: object
-        properties:
-          id:
-            type: string
-          email:
-            type: string
+        description: user first name
+      lastname:
+        type: string
+        description: user password
+      dateBirthday:
+        type: string
+        description: date of birthday
+      dateStart:
+        type: string
+        description: begin to work for us
+      departement:
+        type: string
+        description: departement
+      street:
+        type: string
+        description: street
+      city:
+        type: string
+        description: city
+      state:
+        type: string
+        description: state
+      zipCode:
+        type: integer
+        description: Zip Code
   ApiListEmployee:
     type: object
     properties:

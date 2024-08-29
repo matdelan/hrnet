@@ -10,6 +10,7 @@ import { regexString, regexZipCode } from '../../utils/regex/regex'
 import './index.css'
 import { checkValue } from '../../utils/checkValue'
 import { NavLink } from 'react-router-dom'
+import useEmployeeStore from '../../../store'
 
 /**
  * Home page : Show home page
@@ -26,6 +27,8 @@ export default function index() {
         setIsModalOpen(true);
     }
     const closeModal = () => setIsModalOpen(false);
+
+    const { employee, setEmployee } = useEmployeeStore();
 
     const inputFirstNameRef = useRef(null)
     const errorFirstNameRef = useRef(null)
@@ -104,8 +107,10 @@ export default function index() {
                         case 200:
                             //dispatch(editUserName(apiEmployeResponse.body))
                             //setDisplay(true)
-                            openModal(event)
+                            
                             console.log(apiEmployeeResponse.data)
+                            setEmployee(apiEmployeeResponse.data)
+                            openModal(event)
                             break
                         default:
                             setErrorMessage('Unkwon error')

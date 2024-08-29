@@ -54,5 +54,4 @@ export const checkValue = (inputRef, errorRef) => {
         }
 
     } 
-    /*    */
 }

@@ -44,9 +44,7 @@ export default function ListEmployees() {
                 }
         }
         dataListEmployee()
-    }, [ API_EMPLOYEE_BASE_URL]);
-
-    
+    }, [ API_EMPLOYEE_BASE_URL])
 
     return <>
         {errorMessage && <p>{errorMessage}</p>}
