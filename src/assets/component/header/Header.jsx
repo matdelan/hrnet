@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import './header.css'
 
 /**
@@ -12,7 +13,7 @@ export default function Header() {
    
     return <nav className="main-nav">
         <div className="title">
-            <h1>HRnet</h1>
+            <NavLink to='/'><h1>HRnet</h1> </NavLink>
         </div>
         
     </nav>

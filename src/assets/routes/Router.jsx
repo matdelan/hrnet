@@ -3,6 +3,7 @@ import PageError from '../pages/pageerror/PageError'
 import Index from '../pages/index/Index'
 import './routes.css'
 import Layout from '../pages/layout/Layout'
+import ListEmployees from '../pages/listemployees/ListEmployees'
 
 /**
  * Router : page available 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <Index/>,
+      },
+      {
+        path:'listEmployees',
+        element: <ListEmployees/>,
       }
     ]
   }

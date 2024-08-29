@@ -9,6 +9,7 @@ import { departements } from '../../data/departements'
 import { regexString, regexZipCode } from '../../utils/regex/regex'
 import './index.css'
 import { checkValue } from '../../utils/checkValue'
+import { NavLink } from 'react-router-dom'
 
 /**
  * Home page : Show home page
@@ -22,7 +23,6 @@ export default function index() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [errorMessage, setErrorMessage] = useState('')
     const openModal = (event) => {
-
         setIsModalOpen(true);
     }
     const closeModal = () => setIsModalOpen(false);
@@ -90,8 +90,8 @@ export default function index() {
                     })
                 })
                 if (response.ok) {
-                    const apiEmployeResponse = await response.json()
-                    switch (apiEmployeResponse.status) {
+                    const apiEmployeeResponse = await response.json()
+                    switch (apiEmployeeResponse.status) {
                         case 400:
                             setErrorMessage("Invalid Fiels")
                             break
@@ -105,7 +105,7 @@ export default function index() {
                             //dispatch(editUserName(apiEmployeResponse.body))
                             //setDisplay(true)
                             openModal(event)
-                            console.log(apiEmployeResponse.data)
+                            console.log(apiEmployeeResponse.data)
                             break
                         default:
                             setErrorMessage('Unkwon error')
@@ -126,7 +126,7 @@ export default function index() {
     return (
         <>
         <div className="container">
-            <a href="employee-list.html">View Current Employees</a>
+            <NavLink to='listEmployees'>View Current Employees</NavLink>
             <h2>Create Employee</h2>
             <form action="#" id="create-employee" onSubmit={handleSubmit} className='container__body'>
                 <div className="container__element">
@@ -152,6 +152,7 @@ export default function index() {
                 
                 
             </form>
+            
         </div>
 
         <Modal isOpen={isModalOpen} onClose={closeModal}> Employee Created!</Modal>
