@@ -10,4 +10,10 @@ Currently, two official plugins are available:
 # install project :
 
 npm i react-router-dom
+npm i zustand
+npm -i nelmio/cors-bundle
+npm i -D vitest jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event 
+
+
+npm run test
 

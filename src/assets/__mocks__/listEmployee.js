@@ -1,0 +1,30 @@
+export const mockListEmployee = {
+    status:'200',
+    message:'employee created successfully',
+    data: [
+        {
+            id:'1',
+            firstname: 'John', 
+            lastname: 'Doe',    
+            dateBirthday: '1990-01-01', 
+            dateStart: '2022-09-01',    
+            street: '123 Main St', 
+            city: 'Springfield',   
+            state: 'Illinois',   
+            zipCode: '62704',    
+            department: 'Marketing',  
+        } ,
+        {
+            id:'2',
+            firstname: 'Johna', 
+            lastname: 'aDoe',    
+            dateBirthday: '1990-01-01', 
+            dateStart: '2022-09-01',    
+            street: '123 Main St', 
+            city: 'Springfield',   
+            state: 'Illinois',   
+            zipCode: '62704',    
+            department: 'Marketing',  
+        },
+    ],
+}

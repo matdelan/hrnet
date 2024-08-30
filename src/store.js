@@ -3,6 +3,7 @@ import { create } from 'zustand';
 // Définir le store avec Zustand
 const useEmployeeStore = create((set) => ({
   employee: {
+    id: '',
     firstname: '',
     lastname: '',
     dateBirthday: '',
@@ -14,13 +15,6 @@ const useEmployeeStore = create((set) => ({
     zipCode: '',
   },
   setEmployee: (newEmployee) => set({ employee: newEmployee }),
-  updateEmployee: (key, value) =>
-    set((state) => ({
-      employee: {
-        ...state.employee,
-        [key]: value,
-      },
-    })),
 }));
 
 export default useEmployeeStore
