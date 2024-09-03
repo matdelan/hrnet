@@ -26,7 +26,18 @@ export default function index() {
     const openModal = (event) => {
         setIsModalOpen(true);
     }
-    const closeModal = () => setIsModalOpen(false);
+    const closeModal = () => {
+        inputFirstNameRef.current.value = ''
+        inputLastNameRef.current.value = ''
+        inputDateBirthdayRef.current.value = ''
+        inputDateStartRef.current.value = ''
+        inputStreetRef.current.value = ''
+        inputCityRef.current.value = ''
+        inputStateRef.current.value = ''
+        inputZipCodeRef.current.value = ''
+        inputDepartementRef.current.value = ''
+        setIsModalOpen(false)
+    }
 
     const { employee, setEmployee } = useEmployeeStore();
 
@@ -104,10 +115,7 @@ export default function index() {
                         case 500:
                             setErrorMessage("Internal Server Error")
                             break
-                        case 200:
-                            //dispatch(editUserName(apiEmployeResponse.body))
-                            //setDisplay(true)
-                            
+                        case 200:                           
                             console.log(apiEmployeeResponse.data)
                             setEmployee(apiEmployeeResponse.data)
                             openModal(event)
@@ -120,6 +128,7 @@ export default function index() {
                     setErrorMessage('An error occurred. Please try again.');
                 }
         } catch (error) {
+            setErrorMessage('500: Internal server error');
             console.error(error)
         }
 
@@ -151,8 +160,8 @@ export default function index() {
                 </fieldset>
                 </div>
                 <div className='container__element container__element-center'>
-                    <div>{errorMessage}</div>
                     <button>Save</button>
+                    <div>{errorMessage}</div>
                 </div>
                 
                 

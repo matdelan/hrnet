@@ -31,6 +31,8 @@ paths:
             $ref: '#/definitions/Employee'
         '400':
           description: Invalid Fields
+        '406':
+          description: Not accepted
         '500':
           description: Internal Server Error
     get:
@@ -47,12 +49,6 @@ paths:
             $ref: '#/definitions/ApiListEmployee'
         '400':
           description: Invalid Fields
-        '401':
-          description: Unauthorize
-        '403':
-          description: Forbidden
-        '404':
-          description: Transactions not found
         '500':
           description: Internal Server Error
   

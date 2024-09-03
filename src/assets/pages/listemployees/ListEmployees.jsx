@@ -27,8 +27,6 @@ export default function ListEmployees() {
                                 setErrorMessage("Internal Server Error")
                                 break
                             case 200:
-                                //dispatch(storeUserProfile(employeeDataResponse.data))
-                                console.log(employeeDataResponse.data)
                                 setEmployeeData(employeeDataResponse.data)
                                 break
                             default:
@@ -40,6 +38,7 @@ export default function ListEmployees() {
                         setErrorMessage('Data not found')
                     }
                 } catch (error) {
+                    setErrorMessage("fetch doesn't work")
                     console.error(error)
                 }
         }
