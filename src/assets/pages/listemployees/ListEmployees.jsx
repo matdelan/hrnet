@@ -46,8 +46,8 @@ export default function ListEmployees() {
     }, [ API_EMPLOYEE_BASE_URL])
 
     return <>
-        {errorMessage && <p>{errorMessage}</p>}
         <ShowEmployees employees={employeeData} />
+        {errorMessage && <p>{errorMessage}</p>}
     </>
 
 }

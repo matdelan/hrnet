@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './DatePickerHtml.css'
 
-const DateInput = ({ id, content, name, inputRef, errorRef }) => {
+const DatePickerHtml = ({ id, content, name, inputRef, errorRef }) => {
   const [date, setDate] = useState('');
 
   const handleDateChange = (event) => {
@@ -31,4 +31,4 @@ const DateInput = ({ id, content, name, inputRef, errorRef }) => {
   );
 };
 
-export default DateInput;
+export default DatePickerHtml;

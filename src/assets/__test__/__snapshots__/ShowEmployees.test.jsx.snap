@@ -1,0 +1,306 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ShowEmployees> > should render correctly 1`] = `
+<div>
+  <div
+    class="table__header"
+  >
+    <div
+      class="table__header-elem"
+    >
+      <label
+        for="elementsPage"
+      >
+        Éléments par page : 
+      </label>
+      <select
+        id="elementsPage"
+      >
+        <option
+          value="10"
+        >
+          10
+        </option>
+        <option
+          value="20"
+        >
+          20
+        </option>
+        <option
+          value="50"
+        >
+          50
+        </option>
+        <option
+          value="100"
+        >
+          100
+        </option>
+      </select>
+    </div>
+    <div
+      class="table__header-elem"
+    >
+      <label
+        for="search"
+      >
+        Search :
+      </label>
+      <input
+        id="search"
+        type="text"
+      />
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr
+        class="table__col-gen"
+      >
+        <th>
+          <div
+            class="table__col"
+          >
+            First Name
+            <span
+              class="table__col-block"
+            >
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </span>
+          </div>
+        </th>
+        <th>
+          <div
+            class="table__col"
+          >
+            Last Name
+            <div
+              class="table__col-block"
+            >
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </div>
+          </div>
+        </th>
+        <th>
+          <div
+            class="table__col"
+          >
+            Date of Birth
+            <div
+              class="table__col-block"
+            >
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </div>
+          </div>
+        </th>
+        <th>
+          <div
+            class="table__col"
+          >
+            Start Date
+            <div
+              class="table__col-block"
+            >
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </div>
+          </div>
+        </th>
+        <th>
+          <div
+            class="table__col"
+          >
+            Department
+            <div
+              class="table__col-block"
+            >
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </div>
+          </div>
+        </th>
+        <th>
+          <div
+            class="table__col"
+          >
+            Street
+            <div
+              class="table__col-block"
+            >
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </div>
+          </div>
+        </th>
+        <th>
+          <div
+            class="table__col"
+          >
+            City
+            <div
+              class="table__col-block"
+            >
+               
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </div>
+          </div>
+        </th>
+        <th>
+          <div
+            class="table__col"
+          >
+            State
+            <div
+              class="table__col-block"
+            >
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </div>
+          </div>
+        </th>
+        <th>
+          <div
+            class="table__col"
+          >
+            Zip Code
+            <div
+              class="table__col-block"
+            >
+              <i
+                class="fa-solid fa-caret-up table__col-arrow"
+              />
+              <i
+                class="fa-solid fa-caret-down table__col-arrow"
+              />
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          John
+        </td>
+        <td>
+          Doe
+        </td>
+        <td>
+          1990-01-01
+        </td>
+        <td>
+          2022-09-01
+        </td>
+        <td />
+        <td>
+          123 Main St
+        </td>
+        <td>
+          Springfield
+        </td>
+        <td>
+          Illinois
+        </td>
+        <td>
+          62704
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Johna
+        </td>
+        <td>
+          aDoe
+        </td>
+        <td>
+          1990-01-01
+        </td>
+        <td>
+          2022-09-01
+        </td>
+        <td />
+        <td>
+          123 Main St
+        </td>
+        <td>
+          Springfield
+        </td>
+        <td>
+          Illinois
+        </td>
+        <td>
+          62704
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="table__footer"
+  >
+    <div>
+       Showing 
+      1
+       of 
+      2
+       of 
+      2
+        
+    </div>
+    <div
+      class="table__pagination"
+    >
+      <div
+        class="table__pagination-space"
+      >
+        Previous
+      </div>
+      <button
+        class="activePage"
+      >
+        1
+      </button>
+      <div
+        class="table__pagination-space"
+      >
+        Next
+      </div>
+    </div>
+  </div>
+</div>
+`;

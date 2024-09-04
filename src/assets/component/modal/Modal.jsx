@@ -1,15 +1,21 @@
 import { useRef,useEffect } from 'react'
 import './modal.css'
 
-const Modal = ({ isOpen, onClose, children }) => {
-  const dialog = useRef(null);
+
+const Modal = ({ isOpen, onClose, children ,ref}) => {
+  let dialog
+  if(ref)
+    dialog = ref
+  else
+    dialog = useRef(null)
+
 
   // Ouvre ou ferme la fenêtre modale en fonction de `isOpen`
   useEffect(() => {
     if (isOpen) {
-      dialog.current.showModal();
+      dialog.current.showModal()
     } else {
-      dialog.current.close();
+      dialog.current.close()
     }
   }, [isOpen]);
 
@@ -22,5 +28,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     </dialog>
   );
 };
+
+
 
 export default Modal;

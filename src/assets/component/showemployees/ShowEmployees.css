@@ -1,4 +1,4 @@
-.active {
+.activePage {
     border: solid 3px black
 }
 
@@ -43,6 +43,8 @@
 .table__footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .fa-caret-up {

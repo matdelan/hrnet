@@ -61,7 +61,7 @@ export default function ShowEmployees({ employees }) {
             <button
               key={i}
               onClick={() => handlePageChange(i)}
-              className={i === currentPage ? 'active' : ''}
+              className={i === currentPage ? 'activePage' : ''}
             >
               {i}
             </button>
