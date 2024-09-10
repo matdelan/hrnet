@@ -7,13 +7,12 @@ export default function ShowEmployees({ employees }) {
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
 
     const inputSearchRef = useRef(null)
-    const errorSearchRef = useRef(null)
     const numElementsRef = useRef(0)
 
     /* Construct table */
     const [currentLine, setCurrentLine] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
-    const [numPage, setNumPage] = useState(0)
+
 
     useEffect(() => {
         setSortedEmployees(employees);
@@ -134,17 +133,19 @@ export default function ShowEmployees({ employees }) {
                 </tr>
             </thead>
             <tbody>
+                
                 {sortedEmployees.slice(currentLine,(currentLine+numElementsRef.current.value)).map((employee, index) => (
-                    <tr key={index}>
-                        <td>{employee.firstname}</td>
-                        <td>{employee.lastname}</td>
-                        <td>{employee.dateBirthday}</td>
-                        <td>{employee.dateStart}</td>
-                        <td>{employee.departement}</td>
-                        <td>{employee.street}</td>
-                        <td>{employee.city}</td>
-                        <td>{employee.state}</td>
-                        <td>{employee.zipCode}</td>
+                    
+                    <tr key={index} className={index % 2 === 0 ? 'table__row-white' : 'table__row-grey'}>
+                        <td className="table__row-block">{employee.firstname}</td>
+                        <td className="table__row-block">{employee.lastname}</td>
+                        <td className="table__row-block">{employee.dateBirthday}</td>
+                        <td className="table__row-block">{employee.dateStart}</td>
+                        <td className="table__row-block">{employee.departement}</td>
+                        <td className="table__row-block">{employee.street}</td>
+                        <td className="table__row-block">{employee.city}</td>
+                        <td className="table__row-block">{employee.state}</td>
+                        <td className="table__row-block">{employee.zipCode}</td>
                     </tr>
                 ))}
             </tbody>

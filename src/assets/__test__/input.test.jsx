@@ -18,6 +18,7 @@ describe('<Input>', () => {
               First Name
             </label>
             <input
+              autocomplete="on"
               class="input__style"
               id="first-name"
               name="inputFirstName"

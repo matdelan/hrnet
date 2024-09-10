@@ -13,11 +13,14 @@ describe('<Dropdown>', () => {
         )
         expect(container).toMatchInlineSnapshot(`
           <div>
-            <label>
+            <label
+              for="departement"
+            >
               Departement
             </label>
             <select
               class="option__container"
+              id="departement"
               name="selectDepartement"
             >
               <option

@@ -6,7 +6,7 @@ html {
     color: #2c3e50;
   }
   
-  body {
+body {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -47,4 +47,15 @@ html {
 
 [data-error-visible="false"] {
   display: none;
+}
+
+@media (max-width: 640px) {
+  .container__body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -10,8 +10,8 @@ const Dropdown = ({ options, label, name, inputRef, errorRef }) => {
 
   return (
     <>
-      <label>{label}</label>
-      <select value={selectedOption} onChange={handleChange} className='option__container' name={name} ref={inputRef}>
+      <label htmlFor={label.toLowerCase()}>{label}</label>
+      <select id={label.toLowerCase()}value={selectedOption} onChange={handleChange} className='option__container' name={name} ref={inputRef}>
         <option value="" disabled>
           -- Sélectionnez une option --
         </option>

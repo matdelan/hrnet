@@ -53,3 +53,16 @@
 .fa-caret-down {
     margin-top: -4px;
 }
+
+.table__row-grey{
+    background-color: lightgrey;
+}
+.table__row-white{
+    background-color: white;
+}
+.table__row-block{
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

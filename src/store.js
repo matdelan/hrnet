@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 
-// Définir le store avec Zustand
 const useEmployeeStore = create((set) => ({
   employee: {
     id: '',

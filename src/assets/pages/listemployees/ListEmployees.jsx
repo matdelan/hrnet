@@ -27,6 +27,7 @@ export default function ListEmployees() {
                                 setErrorMessage("Internal Server Error")
                                 break
                             case 200:
+                                console.log(employeeDataResponse.data)
                                 setEmployeeData(employeeDataResponse.data)
                                 break
                             default:
@@ -38,13 +39,13 @@ export default function ListEmployees() {
                         setErrorMessage('Data not found')
                     }
                 } catch (error) {
-                    setErrorMessage("fetch doesn't work")
+                    setErrorMessage("Server issue")
                     console.error(error)
                 }
         }
         dataListEmployee()
     }, [ API_EMPLOYEE_BASE_URL])
-
+    
     return <>
         <ShowEmployees employees={employeeData} />
         {errorMessage && <p>{errorMessage}</p>}

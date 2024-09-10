@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect Trailing Slashes...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Redirect Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Prevent Direct Access to Certain Files...
+<FilesMatch "\.(log|sqlite|git|md|env)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Allow Access to Assets (CSS, JS, Images)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "max-age=2592000, public"
+</IfModule>

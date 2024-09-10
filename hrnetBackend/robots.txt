@@ -1,0 +1,16 @@
+# Indiquer les moteurs de recherche autorisés et leurs directives
+User-agent: *
+Disallow: /private/
+Allow: /public/
+Sitemap: https://www.example.com/sitemap.xml
+
+# Directives spécifiques pour des bots particuliers
+User-agent: Googlebot
+Disallow: /no-google/
+
+User-agent: Bingbot
+Allow: /
+
+# Empêcher les bots d'indexer le dossier /temp
+User-agent: *
+Disallow: /temp/
