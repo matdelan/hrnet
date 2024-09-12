@@ -8,12 +8,10 @@ import { regexString, regexZipCode } from "./regex/regex"
 export const checkValue = (inputRef, errorRef) => {
     
     if(inputRef.current.value === '') {
-        //console.log('Checking input:', inputRef.current.name, 'Value:', inputRef.current.value)
         inputRef.current.classList.add('alert')
         errorRef.current.textContent = "Ce champ est requis."
         errorRef.current.setAttribute("data-error-visible", "true")
     } else {
-        console.log( inputRef.current.name, 'Value:', inputRef.current.value)
         switch (inputRef.current.name) {
             case "inputFirstName":
             case "inputLastName":
