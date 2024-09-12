@@ -163,10 +163,7 @@ export default function index() {
                     <button>Save</button>
                     <div>{errorMessage}</div>
                 </div>
-                
-                
             </form>
-            
         </div>
 
         <Modal isOpen={isModalOpen} onClose={closeModal}> Employee Created!</Modal>

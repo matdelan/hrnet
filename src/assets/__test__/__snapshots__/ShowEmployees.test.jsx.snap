@@ -214,57 +214,97 @@ exports[`<ShowEmployees> > should render correctly 1`] = `
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>
+      <tr
+        class="table__row-white"
+      >
+        <td
+          class="table__row-block"
+        >
           John
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           Doe
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           1990-01-01
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           2022-09-01
         </td>
-        <td />
-        <td>
+        <td
+          class="table__row-block"
+        />
+        <td
+          class="table__row-block"
+        >
           123 Main St
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           Springfield
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           Illinois
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           62704
         </td>
       </tr>
-      <tr>
-        <td>
+      <tr
+        class="table__row-grey"
+      >
+        <td
+          class="table__row-block"
+        >
           Johna
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           aDoe
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           1990-01-01
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           2022-09-01
         </td>
-        <td />
-        <td>
+        <td
+          class="table__row-block"
+        />
+        <td
+          class="table__row-block"
+        >
           123 Main St
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           Springfield
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           Illinois
         </td>
-        <td>
+        <td
+          class="table__row-block"
+        >
           62704
         </td>
       </tr>

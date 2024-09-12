@@ -5,10 +5,19 @@ import { describe, it, expect, vi } from 'vitest'
 
 describe('<DatePickerHtml>', () => {
     it('should render correctly', () => {
-        const inputDateStartRef = renderHook(() => useRef(null))
-        const errorDateStartRef = renderHook(() => useRef(null))
+        //const inputDateStartRef = renderHook(() => useRef(null))
+        //const errorDateStartRef = renderHook(() => useRef(null))
+        const { result: inputDateStartRef } = renderHook(() => useRef(null))
+        const { result: errorDateStartRef } = renderHook(() => useRef(null))
+
         const {container} = render( 
-          <DatePickerHtml id="start-date" content="Start Date" name="inputDateStart" inputRef={inputDateStartRef} errorRef={errorDateStartRef}/>
+          <DatePickerHtml 
+            id="start-date" 
+            content="Start Date" 
+            name="inputDateStart" 
+            inputRef={inputDateStartRef.current} 
+            errorRef={errorDateStartRef.current}
+          />
         )
         expect(container).toMatchInlineSnapshot(`
           <div>
@@ -27,7 +36,6 @@ describe('<DatePickerHtml>', () => {
                 id="start-date"
                 name="inputDateStart"
                 placeholder=""
-                style="padding: 8px; width: 200px;"
                 type="date"
                 value=""
               />

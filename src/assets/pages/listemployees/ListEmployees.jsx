@@ -2,6 +2,13 @@ import { useState, useEffect } from 'react';
 import './listEmployees.css'
 import ShowEmployees from '../../component/showemployees/ShowEmployees';
 
+/**
+ * ListEmployee page : Show the list of employee
+ *
+ * @category Pages
+ * @component
+ * @returns { React.Component } A React component
+ */
 export default function ListEmployees() {
     
     const API_EMPLOYEE_BASE_URL = "http://hrnetbackend.test/api/employee"

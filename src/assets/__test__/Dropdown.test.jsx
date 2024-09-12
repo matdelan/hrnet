@@ -6,10 +6,10 @@ import { departements } from '../__mocks__/departements'
 
 describe('<Dropdown>', () => {
     it('should render correctly', () => {
-            const inputDepartementRef = renderHook(() => useRef(null))
-            const errorDepartementRef = renderHook(() => useRef(null))
-            const {container} = render( 
-              <Dropdown options={ departements } label="Departement" name="selectDepartement" inputRef={inputDepartementRef} errorRef={errorDepartementRef}/>
+        const {result: inputDepartementRef} = renderHook(() => useRef(null))
+        const {result: errorDepartementRef} = renderHook(() => useRef(null))
+        const {container} = render( 
+          <Dropdown options={ departements } label="Departement" name="selectDepartement" inputRef={inputDepartementRef.current} errorRef={errorDepartementRef.current}/>
         )
         expect(container).toMatchInlineSnapshot(`
           <div>
@@ -19,6 +19,7 @@ describe('<Dropdown>', () => {
               Departement
             </label>
             <select
+              aria-invalid="true"
               class="option__container"
               id="departement"
               name="selectDepartement"

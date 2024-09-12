@@ -15,6 +15,5 @@ export default function Header() {
         <div className="title">
             <NavLink to='/'><h1>HRnet</h1> </NavLink>
         </div>
-        
     </nav>
 }

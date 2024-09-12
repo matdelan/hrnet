@@ -2,6 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import Input from '../input/Input'
 import './ShowEmployees.css'
 
+/**
+ * Return an component of the table of the employee 
+ * 
+ * @param {Object} props - The properties passed to the Dropdown component.
+ * @param {Array} props.id - id of the input
+ * @param {string} props.label - The label text for the input.
+ * @param {React.RefObject} props.inputRef - The reference object for the select input element.
+ * @param {React.RefObject} props.errorRef - The optional reference object for handling errors.
+ * @returns {React.Component} A React component rendering a input field.
+ */
 export default function ShowEmployees({ employees }) {
     const [sortedEmployees, setSortedEmployees] = useState([]);
     const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
@@ -9,10 +19,8 @@ export default function ShowEmployees({ employees }) {
     const inputSearchRef = useRef(null)
     const numElementsRef = useRef(0)
 
-    /* Construct table */
     const [currentLine, setCurrentLine] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
-
 
     useEffect(() => {
         setSortedEmployees(employees);
@@ -27,10 +35,10 @@ export default function ShowEmployees({ employees }) {
         sortData(sortConfig)
     }
     const handlePageChange = (page) => {
-        setCurrentPage(page);
+        setCurrentPage(page)
         setCurrentLine((page*(numElementsRef.current.value)-numElementsRef.current.value))
         sortData(sortConfig)
-    };
+    }
 
     const handlePreviousPage = () => {
         const prevPage = currentPage - 1
@@ -40,7 +48,6 @@ export default function ShowEmployees({ employees }) {
             setCurrentLine((prevPage*(numElementsRef.current.value)-numElementsRef.current.value))
             sortData(sortConfig)
         }
-            
     }
     const handleNextPage = () => {
         const nextPage = currentPage + 1

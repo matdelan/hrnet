@@ -65,9 +65,9 @@ export default function DatePicker({id, content}) {
     const handleInputFocus = () => {
         setDisplay(true)
     }
-    const handleInputBlur = () => {
+    /*const handleInputBlur = () => {
         //setDisplay(false)
-    }
+    }*/
     const handleDayClick = (selectedDay, selectedMonth, selectedYear) => {
         console.log("value :" + selectedDay)
         setDay(selectedDay);

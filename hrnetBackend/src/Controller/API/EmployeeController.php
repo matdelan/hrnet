@@ -41,7 +41,7 @@ class EmployeeController extends AbstractController
                 ], JsonResponse::HTTP_BAD_REQUEST);
             }
     
-            // Récupère l'objet Employee hydraté par le formulaire
+            // Récupère l'objet Employee
             $employee = $form->getData();
     
             // Validation de l'entité Employee
@@ -109,7 +109,6 @@ class EmployeeController extends AbstractController
                 'state' => $employee->getState(),
                 'zipCode' => $employee->getZipCode(),
             ];
-            //array_push($data, $this->serializer->serialize($employee, 'json', ['groups' => 'employee:read']));
         }
 
         return new JsonResponse([
