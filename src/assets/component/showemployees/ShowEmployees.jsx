@@ -106,7 +106,7 @@ export default function ShowEmployees({ employees }) {
     
         setSortedEmployees(sortedData);
         setSortConfig({ key, direction })
-    };
+    }
 
     return (
         <>
@@ -125,7 +125,7 @@ export default function ShowEmployees({ employees }) {
                 <input type="text" id="search" ref={inputSearchRef} onChange={updateSearch}/>
             </div>
         </div>
-        <table>
+        <table className='table__body'>
             <thead>
                 <tr className='table__col-gen'>
                     <th><div className='table__col'>First Name<span className='table__col-block'><i className="fa-solid fa-caret-up table__col-arrow" onClick={() => sortData('firstname','ascending')}></i><i className="fa-solid fa-caret-down table__col-arrow" onClick={() => sortData('firstname','descending')}></i></span></div></th>

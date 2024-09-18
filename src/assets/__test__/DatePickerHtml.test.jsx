@@ -5,8 +5,6 @@ import { describe, it, expect, vi } from 'vitest'
 
 describe('<DatePickerHtml>', () => {
     it('should render correctly', () => {
-        //const inputDateStartRef = renderHook(() => useRef(null))
-        //const errorDateStartRef = renderHook(() => useRef(null))
         const { result: inputDateStartRef } = renderHook(() => useRef(null))
         const { result: errorDateStartRef } = renderHook(() => useRef(null))
 

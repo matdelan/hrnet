@@ -34,7 +34,6 @@ export default function ListEmployees() {
                                 setErrorMessage("Internal Server Error")
                                 break
                             case 200:
-                                console.log(employeeDataResponse.data)
                                 setEmployeeData(employeeDataResponse.data)
                                 break
                             default:

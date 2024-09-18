@@ -17,3 +17,19 @@ npm i -D vitest jsdom @testing-library/react @testing-library/jest-dom @testing-
 
 npm run test
 
+# Stack technique
+Front-end :
+React
+Vite
+React-router-dom
+méthode fetch pour l'api
+Zustand
+Vitest
+
+Back-end :
+Laragon
+Symfony
+Bdd Mysql
+Postman
+Swagger
+

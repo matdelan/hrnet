@@ -13,7 +13,10 @@
 
 .table__col {
     display: flex;
+    align-items: center;
 }
+
+
 
 .table__col-block {
     display: flex;
@@ -61,7 +64,8 @@
     background-color: white;
 }
 .table__row-block{
-    max-width: 150px;
+    min-width: 120px;
+    max-width: 120px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

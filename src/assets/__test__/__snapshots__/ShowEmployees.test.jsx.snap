@@ -52,7 +52,9 @@ exports[`<ShowEmployees> > should render correctly 1`] = `
       />
     </div>
   </div>
-  <table>
+  <table
+    class="table__body"
+  >
     <thead>
       <tr
         class="table__col-gen"

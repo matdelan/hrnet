@@ -36,6 +36,7 @@ export default function index() {
         inputStateRef.current.value = ''
         inputZipCodeRef.current.value = ''
         inputDepartementRef.current.value = ''
+        setErrorMessage('')
         setIsModalOpen(false)
     }
 
@@ -116,7 +117,6 @@ export default function index() {
                             setErrorMessage("Internal Server Error")
                             break
                         case 200:                           
-                            console.log(apiEmployeeResponse.data)
                             setEmployee(apiEmployeeResponse.data)
                             openModal(event)
                             break
