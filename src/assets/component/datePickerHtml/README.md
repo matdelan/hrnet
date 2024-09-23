@@ -9,7 +9,7 @@
 
 ## Install
 
-npm -i datepickerhtml
+npm install datepickerhtml@latest
 
 ## Exemple
 

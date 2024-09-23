@@ -4,6 +4,7 @@ import DatePicker from '../../component/datepicker/DatePicker'
 import Modal from '../../component/modal/Modal'
 import Dropdown from '../../component/dropdown/Dropdown'
 import DatePickerHtml from '../../component/datePickerHtml/DatePickerHtml'
+import DatePickerHtmlNPM from 'datepickerhtml'
 import { states } from '../../data/states'
 import { departements } from '../../data/departements'
 import { regexString, regexZipCode } from '../../utils/regex/regex'
@@ -147,7 +148,7 @@ export default function index() {
                     <Input id="first-name" content="First Name" name="inputFirstName" inputRef={inputFirstNameRef} errorRef={errorFirstNameRef}/>
                     <Input id="last-name" content="Last Name" name="inputLastName" inputRef={inputLastNameRef} errorRef={errorLastNameRef}/>
                     <DatePickerHtml id="date-of-birth" content="Date of Birth" name="inputDateBirthday" inputRef={inputDateBirthdayRef} errorRef={errorDateBirthdayRef}/>
-                    <DatePickerHtml id="start-date" content="Start Date" name="inputDateStart" inputRef={inputDateStartRef} errorRef={errorDateStartRef}/>
+                    <DatePickerHtmlNPM id="start-date" content="Start Date" name="inputDateStart" inputRef={inputDateStartRef} errorRef={errorDateStartRef}/>
                     <Dropdown options={ departements } label="Departement" name="selectDepartement" inputRef={inputDepartementRef} errorRef={errorDepartementRef}/>
                 </div>
                 <div className='container__element'>

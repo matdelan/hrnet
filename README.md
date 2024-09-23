@@ -33,3 +33,4 @@ Bdd Mysql
 Postman
 Swagger
 
+# Add a npm package on datePickerHtml component
