@@ -15,12 +15,8 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 class EmployeeController extends AbstractController
 {
-    //private EntityManagerInterface $entityManager;
-    private FormFactoryInterface $formFactory;
-    private ValidatorInterface $validator;
-    private EmployeeRepository $employeeRepository;
 
-    public function __construct(private EntityManagerInterface $entityManager, FormFactoryInterface $formFactory, ValidatorInterface $validator, EmployeeRepository $employeeRepository, private SerializerInterface $serializer){}
+    public function __construct(private EntityManagerInterface $entityManager,private FormFactoryInterface $formFactory,private ValidatorInterface $validator,private EmployeeRepository $employeeRepository, private SerializerInterface $serializer){}
 
     #[Route('/api/employee', name: 'employee_create', methods: ['POST'])]
     public function create(Request $request): JsonResponse
